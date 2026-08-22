@@ -4,6 +4,7 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 require("dotenv").config();
 
 const express =require("express");
+const mongoose =require("mongoose");
 const connectDB = require("./config/db");
 const morgan =require("morgan");
 const http =require("http");
@@ -61,7 +62,7 @@ app.get("/health",(req, res)=>{
 
     res.status(200).json({
         status: "OK",
-        enviroment: Process.env.NODE_ENV ||"development",
+        enviroment: process.env.NODE_ENV ||"development",
         uptime:`${Math.floor(process.uptime())} seconds`,
         timestamp: new Date().toISOString()
     });
