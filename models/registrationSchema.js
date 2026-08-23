@@ -13,7 +13,7 @@ const registrationSchema =new mongoose.Schema({
     },
     status:{
         type:String,
-        enum:["Pending", " Confirmed", "Cancelled"],
+        enum:["Pending", "Confirmed", "Cancelled"],
         default: "Confirmed"
     }
 },{timestamps: true});

@@ -11,7 +11,7 @@ const getEvents =asyncHandler(async(req, res)=>{
    let query ={};
 
    if(category) query.category =category;
-   if(city) query.city ={$regex:"city", $options: "i"};
+   if(city) query.city ={$regex:city, $options: "i"};
    if(startDate || endDate){
     query.date={};
     if(startDate) query.date.$gte =new Date(startDate);
@@ -67,8 +67,8 @@ const getById =asyncHandler(async(req, res)=>{
 })
 
 const createEvent= asyncHandler(async(req, res)=>{
-    const {title, description, capacity, date, city, category} =req.body;
-    const event =await Event.create({title, description, capacity, date, city, category});
+const { title, description, capacity, date, city, category, venue } = req.body;
+    const event =await Event.create({title, description, capacity, date, city, category, venue, organizer: req.user.userId});
     res.status(201).json({
         status: "success",
         data: {event}

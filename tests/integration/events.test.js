@@ -35,7 +35,7 @@ describe("post /api/events", ()=>{
     it("returning 422 when payload error", async()=>{
 
         const tokenValidate = jwt.sign(
-            {id:"60d5ecb8b5c9c22b1c8e1220", role :"admin"},
+            {userId:"60d5ecb8b5c9c22b1c8e1220", role :"admin"},
             process.env.JWT_SECRET
         );
         const res =await request(app)

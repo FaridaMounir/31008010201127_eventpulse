@@ -4,6 +4,7 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 require("dotenv").config();
 
 const express =require("express");
+const mongoose =require("mongoose");
 const connectDB = require("./config/db");
 const morgan =require("morgan");
 const http =require("http");
@@ -25,12 +26,13 @@ const io =new Server(server, {
         origin: "*"
     }
 });
+app.set("io", io);
 
 io.on("connection", (socket)=>{
     console.log(`User connected!! ${socket.id}`);
     
     socket.on("join-event", (eventId)=>{
-        socket.join("eventId");
+        socket.join(eventId);
         console.log(`${socket.id} Joined the room: ${eventId}`);
     });
     
@@ -61,7 +63,8 @@ app.get("/health",(req, res)=>{
 
     res.status(200).json({
         status: "OK",
-        enviroment: Process.env.NODE_ENV ||"development",
+        enviroment: process.env.NODE_ENV ||"development",
+        database:dbState,
         uptime:`${Math.floor(process.uptime())} seconds`,
         timestamp: new Date().toISOString()
     });

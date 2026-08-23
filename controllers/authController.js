@@ -25,8 +25,8 @@ const register = asyncHandler(async(req, res)=>{
 
 
         const payload ={
-        userId :user._id,
-        role:user.role
+        userId :newUser._id,
+        role:newUser.role
         };
 
         const token =jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: "2d"});
