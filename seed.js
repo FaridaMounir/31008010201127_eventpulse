@@ -48,18 +48,26 @@ const seedData =async ()=>{
 
         const sampleEvents =[
             {
+
               title: "Tech Innovation Event",
+              description: "A technology and innovation event.",
               capacity: 200,
               date: new Date("2026-10-15"),
               city: "Cairo",
               category: categories["Tech"],
+              organizer: userAdmin._id,
+              venue: "Cairo Conference Center"
+
             },
             {
               title: 'Summer Music Festival',
+              description: "The best music event out there!",
               capacity: 500,
               date: new Date('2026-07-20'),
               city: 'Alexandria',
               category: categories['Music'],
+              organizer: userAdmin._id,
+              venue: "Bibilotheca Alexandria Library"
             },
         ];
 

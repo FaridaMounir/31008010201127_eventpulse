@@ -26,12 +26,13 @@ const io =new Server(server, {
         origin: "*"
     }
 });
+app.set("io", io);
 
 io.on("connection", (socket)=>{
     console.log(`User connected!! ${socket.id}`);
     
     socket.on("join-event", (eventId)=>{
-        socket.join("eventId");
+        socket.join(eventId);
         console.log(`${socket.id} Joined the room: ${eventId}`);
     });
     
@@ -63,6 +64,7 @@ app.get("/health",(req, res)=>{
     res.status(200).json({
         status: "OK",
         enviroment: process.env.NODE_ENV ||"development",
+        database:dbState,
         uptime:`${Math.floor(process.uptime())} seconds`,
         timestamp: new Date().toISOString()
     });
