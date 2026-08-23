@@ -8,7 +8,8 @@ const mongoose =require("mongoose");
 const connectDB = require("./config/db");
 const morgan =require("morgan");
 const http =require("http");
-const {Server} =require("socket.io")
+const path =require("path");
+const {Server} =require("socket.io");
 const mongoSanitize =require("express-mongo-sanitize");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
@@ -78,13 +79,25 @@ const swaggerOptions = {
       version: "1.0.0",
     },
   },
-  apis: ["./routes/*.js", "./app.js"],
+
+  apis: [path.join(__dirname, "./routes/*.js"), path.join(__dirname, "./app.js")],
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css";
 
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, {
+    customCssUrl: CSS_URL,
+    customJs: [
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.js",
+    ],
+  })
+);
 
 app.use("/api/auth",authRouter);
 app.use("/api/events",eventRouter);
