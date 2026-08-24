@@ -1,0 +1,1537 @@
+{
+  "info": {
+    "_postman_id": "247a1166-e222-4029-ae72-5409026eaf85",
+    "name": "31008010201127 - EventPulse",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55888232"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "item": [
+        {
+          "name": "Check health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Check health",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/health",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "health"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 19:42:04 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"7d-Qu1wEMrYltK+I6tHh5P4oW2WGGU\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::w5lwn-1787514124888-1bae8c7acb87"
+                },
+                {
+                  "key": "content-length",
+                  "value": "125"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"OK\",\n    \"enviroment\": \"production\",\n    \"database\": \"connected\",\n    \"uptime\": \"38 seconds\",\n    \"timestamp\": \"2026-08-23T19:42:04.971Z\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Alya\",\r\n    \"email\":\"test1@mail.com\",\r\n    \"password\":\"sosecret123\",\r\n    \"role\":\"attendee\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Alya\",\r\n    \"email\":\"test1@mail.com\",\r\n    \"password\":\"sosecret123\",\r\n    \"role\":\"attendee\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 19:45:34 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"155-ihx0ik46GSZ9eRQWQWMuNMVT1PE\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::2clv7-1787514333994-c42e277dff36"
+                },
+                {
+                  "key": "content-length",
+                  "value": "341"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"user registered successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThiNGRkZTUzZTI4NDRmODYxYTA1YTciLCJyb2xlIjoiYXR0ZW5kZWUiLCJpYXQiOjE3ODc1MTQzMzQsImV4cCI6MTc4NzY4NzEzNH0.j-EMiwL1NMGuZhOX51eqpCTvIK_6z4Ora8Xhs6ofNsE\",\n    \"user\": {\n        \"userId\": \"6a8b4dde53e2844f861a05a7\",\n        \"email\": \"test1@mail.com\",\n        \"role\": \"attendee\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"test0@mail.com\",\r\n    \"password\":\"testing1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"test1@mail.com\",\r\n    \"password\":\"sosecret123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 19:47:36 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"f7-hPebV9Asf40a3oAJul71JBjPj/s\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::czkzd-1787514456415-bb3bf2b85df0"
+                },
+                {
+                  "key": "content-length",
+                  "value": "247"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Logged in successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThiNGRkZTUzZTI4NDRmODYxYTA1YTciLCJyb2xlIjoiYXR0ZW5kZWUiLCJpYXQiOjE3ODc1MTQ0NTYsImV4cCI6MTc4NzY4NzI1Nn0.Wbog2Z1qbQ_H7ACII3xGMDk2l20QEJY_YQkWy8A5ynA\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Get all events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events?city=alexandria&limit=2&page=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "alexandria"
+                },
+                {
+                  "key": "limit",
+                  "value": "2"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "search",
+                  "value": "music",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "date",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get all events",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ],
+                  "query": [
+                    {
+                      "key": "city",
+                      "value": "alexandria",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "2",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "page",
+                      "value": "2",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "search",
+                      "value": "music",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "date",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 20:02:41 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"6d1-G6xzgrA1uruY4JxYJbf9vvAM3a4\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::xx7vp-1787515360380-a35a737c1e6d"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"results\": 4,\n    \"total\": 4,\n    \"page\": 1,\n    \"limit\": 10,\n    \"data\": {\n        \"events\": [\n            {\n                \"registrationCount\": 0,\n                \"_id\": \"6a779b37b82638aded791bc8\",\n                \"title\": \"Summer Music Festival\",\n                \"__v\": 0,\n                \"capacity\": 500,\n                \"category\": {\n                    \"_id\": \"6a779b37b82638aded791bc5\",\n                    \"name\": \"Music\",\n                    \"__v\": 0,\n                    \"createdAt\": \"2026-08-08T21:10:12.146Z\",\n                    \"description\": \"Music related events\",\n                    \"updatedAt\": \"2026-08-08T21:27:17.462Z\"\n                },\n                \"city\": \"Alexandria\",\n                \"createdAt\": \"2026-08-08T21:10:13.051Z\",\n                \"date\": \"2026-07-20T00:00:00.000Z\",\n                \"updatedAt\": \"2026-08-08T21:27:18.793Z\"\n            },\n            {\n                \"registrationCount\": 0,\n                \"_id\": \"6a78d78694b012ad65ebd5d8\",\n                \"title\": \"Amr diab concert\",\n                \"capacity\": 678776,\n                \"date\": \"2026-11-05T00:00:00.000Z\",\n                \"city\": \"alexandria\",\n                \"createdAt\": \"2026-08-09T19:39:50.190Z\",\n                \"updatedAt\": \"2026-08-09T19:39:50.190Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6a81940d41806da608e528b2\",\n                \"title\": \"python hub\",\n                \"description\": \"get to know other python programmers!!\",\n                \"capacity\": 2500,\n                \"registrationCount\": 0,\n                \"date\": \"2026-09-15T00:00:00.000Z\",\n                \"city\": \"cairo\",\n                \"category\": {\n                    \"_id\": \"6a779b36b82638aded791bc4\",\n                    \"name\": \"Tech\",\n                    \"__v\": 0,\n                    \"createdAt\": \"2026-08-08T21:10:11.120Z\",\n                    \"description\": \"Tech related events\",\n                    \"updatedAt\": \"2026-08-08T21:27:16.819Z\"\n                },\n                \"createdAt\": \"2026-08-16T10:42:21.853Z\",\n                \"updatedAt\": \"2026-08-16T10:42:21.853Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6a8adb43ef27e1fa9e2209a3\",\n                \"title\": \"Sports Event\",\n                \"description\": \"Annual local football tournament\",\n                \"capacity\": 500,\n                \"registrationCount\": 0,\n                \"date\": \"2026-11-11T11:15:31.091Z\",\n                \"city\": \"Cairo\",\n                \"organizer\": \"6a78cb3be7f302401a747ae8\",\n                \"category\": {\n                    \"_id\": \"6a779b37b82638aded791bc6\",\n                    \"name\": \"Sports\",\n                    \"__v\": 0,\n                    \"createdAt\": \"2026-08-08T21:10:12.480Z\",\n                    \"description\": \"Sports related events\",\n                    \"updatedAt\": \"2026-08-08T21:27:18.060Z\"\n                },\n                \"venue\": \"Main Stadium\",\n                \"createdAt\": \"2026-08-23T11:36:36.025Z\",\n                \"updatedAt\": \"2026-08-23T11:36:36.025Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+            },
+            {
+              "name": "Get by query search",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events?city=alexandria&limit=2&page=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ],
+                  "query": [
+                    {
+                      "key": "city",
+                      "value": "alexandria"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "2"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "search",
+                      "value": "music",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "date",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 20:04:14 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2ef-C4GTZvmyzA9Suhfqs878oC5nx3w\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::ldltd-1787515453943-49cbea20190d"
+                },
+                {
+                  "key": "content-length",
+                  "value": "751"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"results\": 2,\n    \"total\": 2,\n    \"page\": 1,\n    \"limit\": 2,\n    \"data\": {\n        \"events\": [\n            {\n                \"registrationCount\": 0,\n                \"_id\": \"6a779b37b82638aded791bc8\",\n                \"title\": \"Summer Music Festival\",\n                \"__v\": 0,\n                \"capacity\": 500,\n                \"category\": {\n                    \"_id\": \"6a779b37b82638aded791bc5\",\n                    \"name\": \"Music\",\n                    \"__v\": 0,\n                    \"createdAt\": \"2026-08-08T21:10:12.146Z\",\n                    \"description\": \"Music related events\",\n                    \"updatedAt\": \"2026-08-08T21:27:17.462Z\"\n                },\n                \"city\": \"Alexandria\",\n                \"createdAt\": \"2026-08-08T21:10:13.051Z\",\n                \"date\": \"2026-07-20T00:00:00.000Z\",\n                \"updatedAt\": \"2026-08-08T21:27:18.793Z\"\n            },\n            {\n                \"registrationCount\": 0,\n                \"_id\": \"6a78d78694b012ad65ebd5d8\",\n                \"title\": \"Amr diab concert\",\n                \"capacity\": 678776,\n                \"date\": \"2026-11-05T00:00:00.000Z\",\n                \"city\": \"alexandria\",\n                \"createdAt\": \"2026-08-09T19:39:50.190Z\",\n                \"updatedAt\": \"2026-08-09T19:39:50.190Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "{{eventId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get by id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/{{eventId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "{{eventId}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 20:25:08 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"23e-tY4aVScWJtbC9HLjFCUzGDovYmw\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::4d2fh-1787516703432-942cbbd38537"
+                },
+                {
+                  "key": "content-length",
+                  "value": "574"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"data\": {\n        \"event\": {\n            \"_id\": \"6a8b5478344159c5023fcf9a\",\n            \"title\": \"The big boxers\",\n            \"description\": \"The biggest boxing event in egypt!\",\n            \"capacity\": 5656,\n            \"registrationCount\": 0,\n            \"date\": \"2026-08-23T20:09:49.771Z\",\n            \"city\": \"Alexandria\",\n            \"organizer\": \"6a8b4dde53e2844f861a05a7\",\n            \"category\": {\n                \"_id\": \"6a779b37b82638aded791bc6\",\n                \"name\": \"Sports\",\n                \"__v\": 0,\n                \"createdAt\": \"2026-08-08T21:10:12.480Z\",\n                \"description\": \"Sports related events\",\n                \"updatedAt\": \"2026-08-08T21:27:18.060Z\"\n            },\n            \"venue\": \"Alex stadium\",\n            \"createdAt\": \"2026-08-23T20:13:44.063Z\",\n            \"updatedAt\": \"2026-08-23T20:17:33.252Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n  \"title\": \"Cart Racers\",\r\n  \"description\": \"The biggest cart racing event in egypt!\",\r\n  \"date\": \"2026-08-23T20:09:49.771Z\",\r\n  \"city\": \"Cairo\",\r\n  \"venue\": \"Al Ahly Club\",\r\n  \"category\": \"6a779b37b82638aded791bc6\",\r\n  \"capacity\": 3524\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create event",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "  {\r\n  \"title\": \"Cart Racers\",\r\n  \"description\": \"The biggest cart racing event in egypt!\",\r\n  \"date\": \"2026-08-23T20:09:49.771Z\",\r\n  \"city\": \"Cairo\",\r\n  \"venue\": \"Al Ahly Club\",\r\n  \"category\": \"6a779b37b82638aded791bc6\",\r\n  \"capacity\": 3524\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 20:27:10 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1a7-tCXHsAmdjfpaHivNEo6FP4MUdsc\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::f5pkm-1787516830458-d9ccb9f906c5"
+                },
+                {
+                  "key": "content-length",
+                  "value": "423"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"event\": {\n            \"title\": \"Cart Racers\",\n            \"description\": \"The biggest cart racing event in egypt!\",\n            \"capacity\": 3524,\n            \"registrationCount\": 0,\n            \"date\": \"2026-08-23T20:09:49.771Z\",\n            \"city\": \"Cairo\",\n            \"organizer\": \"6a8b4dde53e2844f861a05a7\",\n            \"category\": \"6a779b37b82638aded791bc6\",\n            \"venue\": \"Al Ahly Club\",\n            \"_id\": \"6a8b579ea736b02416860d58\",\n            \"createdAt\": \"2026-08-23T20:27:10.634Z\",\n            \"updatedAt\": \"2026-08-23T20:27:10.634Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Edit event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n  \"capacity\": 10000\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "{{eventId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Edit event",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "  {\r\n  \"capacity\": 10000\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/{{eventId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "{{eventId}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 20:27:58 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1ab-gEDgo/2hnYFb1BS6GQZeoLrSxvg\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::rbwkh-1787516878644-0ec4f72ccf40"
+                },
+                {
+                  "key": "content-length",
+                  "value": "427"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"event\": {\n            \"_id\": \"6a8b5478344159c5023fcf9a\",\n            \"title\": \"The big boxers\",\n            \"description\": \"The biggest boxing event in egypt!\",\n            \"capacity\": 10000,\n            \"registrationCount\": 0,\n            \"date\": \"2026-08-23T20:09:49.771Z\",\n            \"city\": \"Alexandria\",\n            \"organizer\": \"6a8b4dde53e2844f861a05a7\",\n            \"category\": \"6a779b37b82638aded791bc6\",\n            \"venue\": \"Alex stadium\",\n            \"createdAt\": \"2026-08-23T20:13:44.063Z\",\n            \"updatedAt\": \"2026-08-23T20:27:58.727Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "{{eventId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete event",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/{{eventId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "{{eventId}}"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 204
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "date",
+                  "value": "Sun, 23 Aug 2026 20:28:44 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"20-bff5r/a5MyNNWy9hjn8a8pOLDxA\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::2xq97-1787516924367-e6bbcd50c5e6"
+                }
+              ],
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "Register for event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{attendeeToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"eventId\":\"6a8b5854a736b02416860d59\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register for event",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"eventId\":\"6a8b5854a736b02416860d59\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 201
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 24 Aug 2026 08:50:56 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"11b-eYodhwxJekn52Y4xmrRQTbHCfVk\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::4z8x4-1787561455825-a9bb4ddb7d30"
+                },
+                {
+                  "key": "content-length",
+                  "value": "283"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Successfully registered!\",\n    \"registration\": {\n        \"user\": \"6a8b49d846fcc3e1233a6503\",\n        \"event\": \"6a8b5854a736b02416860d59\",\n        \"status\": \"Confirmed\",\n        \"_id\": \"6a8c05f05d81275666d4d02c\",\n        \"createdAt\": \"2026-08-24T08:50:56.515Z\",\n        \"updatedAt\": \"2026-08-24T08:50:56.515Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get registered events",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{attendeeToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/myEvents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "myEvents"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get registered events",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"eventId\":\"6a8b5854a736b02416860d59\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/myEvents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "myEvents"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 24 Aug 2026 08:53:30 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"264-dtkUkscbi7qfILxSK9bg31iEbAA\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "fra1::iad1::drz52-1787561609526-282ff5557120"
+                },
+                {
+                  "key": "content-length",
+                  "value": "612"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"registrations\": [\n        {\n            \"_id\": \"6a8c05f05d81275666d4d02c\",\n            \"user\": \"6a8b49d846fcc3e1233a6503\",\n            \"event\": {\n                \"_id\": \"6a8b5854a736b02416860d59\",\n                \"title\": \"The big boxers\",\n                \"description\": \"The biggest boxing event in egypt!\",\n                \"capacity\": 10000,\n                \"registrationCount\": 0,\n                \"date\": \"2026-08-23T20:09:49.771Z\",\n                \"city\": \"Alexandria\",\n                \"organizer\": \"6a8b4dde53e2844f861a05a7\",\n                \"category\": \"6a779b37b82638aded791bc6\",\n                \"venue\": \"Alex stadium\",\n                \"createdAt\": \"2026-08-23T20:30:12.712Z\",\n                \"updatedAt\": \"2026-08-23T20:30:12.712Z\",\n                \"__v\": 0\n            },\n            \"status\": \"Confirmed\",\n            \"createdAt\": \"2026-08-24T08:50:56.515Z\",\n            \"updatedAt\": \"2026-08-24T08:50:56.515Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete registered events",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{attendeeToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/6a8c191b4e42c6da78304bd3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "6a8c191b4e42c6da78304bd3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete registered events",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8c191b4e42c6da78304bd3",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8c191b4e42c6da78304bd3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "68"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"44-jSeXxNiZbGuLlI4jE4C/a2DkmgY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 24 Aug 2026 10:28:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"message\": \"Registration cancelled successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Announcements",
+      "item": [
+        {
+          "name": "Post Announcements",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"eventId\": \"6a8b5854a736b02416860d59\",\r\n    \"content\":\"Welcome to the greatest boxing event!! We hope you enjoy😁😁\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Post Announcements",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"eventId\": \"6a8b5854a736b02416860d59\",\r\n    \"content\":\"Welcome to the greatest boxing event!! We hope you enjoy😁😁\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "343"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"157-i2TyBylVSN0UlaFUlpfxKeWDkXc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 24 Aug 2026 11:28:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"data\": {\n        \"sender\": {\n            \"_id\": \"6a8b4dde53e2844f861a05a7\",\n            \"name\": \"Alya\",\n            \"email\": \"test1@mail.com\"\n        },\n        \"event\": \"6a8b5854a736b02416860d59\",\n        \"content\": \"Welcome to the greatest boxing event!! We hope you enjoy😁😁\",\n        \"_id\": \"6a8c2ae24f4fa20d4ba224d4\",\n        \"createdAt\": \"2026-08-24T11:28:34.212Z\",\n        \"updatedAt\": \"2026-08-24T11:28:34.212Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Announcements",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{attendeeToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements/6a8b5854a736b02416860d59",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements",
+                "6a8b5854a736b02416860d59"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Announcements",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}as/api/announcements/6a8b5854a736b02416860d59",
+                  "host": [
+                    "{{baseUrl}}as"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements",
+                    "6a8b5854a736b02416860d59"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "357"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"165-APV2ipNlBWiQtetfFP/zKVc5HeU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 24 Aug 2026 11:52:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"Success\",\n    \"results\": 1,\n    \"data\": [\n        {\n            \"_id\": \"6a8c2a8746d03c273e2deca8\",\n            \"sender\": {\n                \"_id\": \"6a8b4dde53e2844f861a05a7\",\n                \"name\": \"Alya\",\n                \"email\": \"test1@mail.com\"\n            },\n            \"event\": \"6a8b5854a736b02416860d59\",\n            \"content\": \"Welcome to the greatest boxing event!! We hope you enjoy😁😁\",\n            \"createdAt\": \"2026-08-24T11:27:03.840Z\",\n            \"updatedAt\": \"2026-08-24T11:27:03.840Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
