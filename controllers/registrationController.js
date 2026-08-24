@@ -62,13 +62,15 @@ const getUserRegister =asyncHandler(async(req, res)=>{
 
 const cancelRegister=asyncHandler(async(req, res)=>{
 
+    const userId =req.user._id || req.user.id|| req.user.userId;
+
     const registration =await Registration.findById(req.params.id);
 
     if(!registration){
         throw new AppError("Registration not found", 404);
     };
 
-    if(!registration.user.toString() !==userId.toString()){
+    if(registration.user.toString() !==userId.toString()){
         throw new AppError("Unable to cancel registration. Access denied.", 403);
     };
 
