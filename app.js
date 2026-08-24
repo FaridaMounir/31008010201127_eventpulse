@@ -99,6 +99,14 @@ app.use(
   })
 );
 
+app.get("/", (req, res)=>{
+  res.status(200).json({
+    message:"Welcome!",
+    documentation:"/api-docs",
+    health: "/health"
+  });
+});
+
 app.use("/api/auth",authRouter);
 app.use("/api/events",eventRouter);
 app.use("/api/registrations", registrationRouter);
